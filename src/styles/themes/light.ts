@@ -6,8 +6,8 @@ export default {
     secundary: '#acacac',
     
     background: '#ffffff',
+    transparentBackground: '#ffffff99',
     text: '#363636',
-    text2: '#dddddd',
   }
 
 

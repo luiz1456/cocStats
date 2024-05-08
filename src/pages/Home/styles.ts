@@ -147,7 +147,7 @@ export const TextContainer = styled.div`
   }
 
   @media (max-width: 694px) {
-    color: ${({ theme }) => theme.colors.text2};
+    color: ${({ theme }) => theme.colors.text};
   }
   
 `
@@ -167,7 +167,7 @@ export const ImgContainer = styled.div`
     &::before {
       content: '';
       position: absolute;
-      background-color: #1d1d1d99;
+      background-color: ${({theme}) => theme.colors.transparentBackground };
       height: 100%;
       width: 100%;
     }
