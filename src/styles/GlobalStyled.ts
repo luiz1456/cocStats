@@ -9,7 +9,7 @@ export const GlobalStyled = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: background-color ease-in 600ms;
+  transition: background-color ease-in 400ms;
 
   &::-webkit-scrollbar{
     display: none;

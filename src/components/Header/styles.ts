@@ -21,7 +21,7 @@ export const Container = styled.header`
       gap: 1.6rem;
 
     .hiden {
-      display: none;
+      transform: translateX(100%);
     }
     }
   } 
@@ -35,6 +35,7 @@ export const ContainerLogo = styled.div`
   }
 `
 export const ContainerNav = styled.nav`
+  transition: transform 300ms ease-out;
 
   ul {
     display: flex;
@@ -54,11 +55,14 @@ export const ContainerNav = styled.nav`
       &:hover {
         border-bottom: .3rem solid ${({ theme }) => theme.colors.text};
       }
+      
     }
-
-    
+    .active {
+      border-bottom: .3rem solid ${({ theme }) => theme.colors.text};
+    }
   }
   @media (max-width: 694px) {
+    transform: translate(0%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,26 +114,65 @@ export const ButtonMenuMobile = styled.button`
   border-radius: .4rem;
   background-color: ${({ theme }) => theme.colors.primary};
   border: .1rem solid ${({ theme }) => theme.colors.primary};
+  height: 100%;
   
   &:hover {
     border: .1rem solid ${({ theme }) => theme.colors.text};
   }
-
   &>div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 2rem;
+    transition: 600ms ease-out;
+
+    .div1 {
+      transform-origin: 0% 0%;
+      transition: transform 600ms ease-out;
+    }
+    
+    .div2 {
+      transition: 600ms ease-out;
+    }
+    
+    .div3 {
+      transform-origin: 0% 100%;
+      transition: transform 600ms ease-out;
+
+    }
 
     div {
-      width: 2.8rem;
+      width: 2.4rem;
       height: .4rem;
       border-radius: .8rem;
       background-color: ${({ theme }) => theme.colors.text};
+      opacity: 1;
     }
   }
 
-  @media (max-width: 694px) {
-    display: flex;
+  .open {    
+    transform: translateX(20%);
+
+    .div1 {
+      transform-origin: 0% 0%;
+      transform: rotate(45deg);
+      transition: transform 600ms ease-out;
+    }
+    
+    .div2 {
+      opacity: 0;
+      transition: 600ms ease-out;
+    }
+    
+    .div3 {
+      transform-origin: 0% 100%;
+      transition: transform 600ms ease-out;
+      transform: rotate(-45deg);
+
+    }
   }
-`
+  
+  @media (max-width: 694px) {
+      display: flex;
+  }
+  `

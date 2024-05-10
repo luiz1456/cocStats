@@ -9,6 +9,11 @@ export default function Header({ toggleTheme }: {toggleTheme: () => void}) {
   const [menuOpen, setMenuOpen] = useState(false)
   const theme = useContext(ThemeContext)
 
+  const handleNav = (active: string) => {
+    setIsActive(active)
+    setMenuOpen(false)
+  }
+
   return (
     <Container>
       <ContainerLimitWidth>
@@ -19,45 +24,33 @@ export default function Header({ toggleTheme }: {toggleTheme: () => void}) {
           <ContainerNav className={menuOpen ? '' : 'hiden'}>
             <ul>
               <li><Link
-                onClick={() => setIsActive('Home')}
-                className='linkNav'
-                to={'/'}
-                style={isActive === 'Home'
-                  ? { borderBottom: `3px solid ${theme!.colors.text}` }
-                  : undefined}>
+                onClick={() => handleNav('Home')}
+                className= {`linkNav ${isActive === 'Home' && 'active'}`}
+                to={'/'}>
                 <FaHome />Home</Link></li>
               <li><Link
-                onClick={() => setIsActive('Search')}
-                className='linkNav'
-                to={'search'}
-                style={isActive === 'Search'
-                  ? { borderBottom: `3px solid ${theme!.colors.text}` }
-                  : undefined}>
+                onClick={() => handleNav('Search')}
+                className= {`linkNav ${isActive === 'Search' && 'active'}`}
+                to={'search'}>
                 <FaSearch />Search</Link></li>
               <li><Link
-                onClick={() => setIsActive('Classifications')}
-                className='linkNav'
-                to={'/'}
-                style={isActive === 'Classifications'
-                  ? { borderBottom: `3px solid ${theme!.colors.text}` }
-                  : undefined}>
+                onClick={() => handleNav('Classifications')}
+                className= {`linkNav ${isActive === 'Classifications' && 'active'}`}
+                to={'/'}>
                 <FaFlag />Classifications</Link></li>
               <li><Link
-                onClick={() => setIsActive('Favorite')}
-                className='linkNav'
-                to={'/'}
-                style={isActive === 'Favorite'
-                  ? { borderBottom: `3px solid ${theme!.colors.text}` }
-                  : undefined}>
+                onClick={() => handleNav('Favorite')}
+                className= {`linkNav ${isActive === 'Favorite' && 'active'}`}
+                to={'/'}>
                 <FaHeart />Favorite</Link></li>
             </ul>
           </ContainerNav>
           <ButtonTheme onClick={toggleTheme}> {theme!.title === 'light' ? <FaSun /> : <FaMoon />} </ButtonTheme>
           <ButtonMenuMobile onClick={() => setMenuOpen(!menuOpen)}>
-            <div>
-              <div />
-              <div />
-              <div />
+            <div className={menuOpen ? 'open' : ''}>
+              <div className="div1"/>
+              <div className="div2"/>
+              <div className="div3"/>
             </div>
           </ButtonMenuMobile>
         </div>
