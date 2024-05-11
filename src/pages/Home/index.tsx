@@ -1,5 +1,5 @@
-import { FaSearch } from "react-icons/fa";
-import { ContainerLimitWidth, ContainerSearch, ContainerSearchImg, ContainerSearchInput, ImgContainer, Main, Section, TextContainer } from "./styles";
+import { FaApple, FaGooglePlay, FaSearch } from "react-icons/fa";
+import { ContainerLimitWidth, ContainerSearch, ContainerSearchImg, ContainerSearchInput, ImgContainer, Main, Section, SectionDownload, TextContainer } from "./styles";
 
 export default function Home() {
   return (
@@ -44,6 +44,19 @@ export default function Home() {
             <img src="assets/imgs/models/Super_Dragon.png" alt="Super_Dragon" />
           </ImgContainer>
         </Section>
+        <SectionDownload>
+          <div className="containerText">
+            <p>Get ready for an epic journey of strategy and conquest! Join the battle and dominate the battlefield by downloading Clash of Clans right now!</p>
+          </div>
+          <button>
+            <FaGooglePlay />
+            <span>Download on Play Store</span>
+          </button>
+          <button>
+            <FaApple />
+            <span>Download from the Apple Store</span>
+          </button>
+        </SectionDownload>
       </ ContainerLimitWidth>
     </Main >
   )

@@ -50,15 +50,32 @@ export const ContainerNav = styled.nav`
       display: flex;
       align-items: center;
       gap: .4rem;
-      border-bottom: .3rem solid ${({ theme }) => theme.colors.primary};
+      position: relative;
       
-      &:hover {
-        border-bottom: .3rem solid ${({ theme }) => theme.colors.text};
+      &::after {
+        content: '';
+        width: 100%;
+        height: .3rem;
+        border-radius: .4rem;
+        background-color: ${({theme}) => theme.colors.text };
+        position: absolute;
+        bottom: -0.4rem;
+        transform: scaleX(0);
+        transition: transform 100ms ease-in-out;
+        transform-origin: 50%;
+      }
+      
+      &:hover::after {
+        transform: scalex(100%);
+        transform-origin: 50%;
       }
       
     }
     .active {
-      border-bottom: .3rem solid ${({ theme }) => theme.colors.text};
+      &::after {
+        transform: scalex(100%);
+        transform-origin: 50%;
+      }
     }
   }
   @media (max-width: 694px) {
@@ -127,7 +144,7 @@ export const ButtonMenuMobile = styled.button`
     transition: 600ms ease-out;
 
     .div1 {
-      transform-origin: 0% 0%;
+      transform-origin: 0%;
       transition: transform 600ms ease-out;
     }
     

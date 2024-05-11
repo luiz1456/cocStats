@@ -9,6 +9,4 @@ export default {
     transparentBackground: '#ffffff99',
     text: '#363636',
   }
-
-
 }

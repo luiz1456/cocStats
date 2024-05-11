@@ -33,8 +33,8 @@ export const ContainerSearchInput = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2.4rem;
   padding: 1.2rem;
+  gap: 2.4rem;
 
   span {
     color: ${({ theme }) => theme.colors.text};
@@ -54,13 +54,16 @@ export const ContainerSearchInput = styled.div`
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.text};
       border: .1rem solid ${({ theme }) => theme.colors.primary};
-      border-right: none;
       font-size: 2.4rem;
       height: 4.4rem;
+      outline: none;
+      
+      &:focus {
+        border: .1rem solid ${({ theme }) => theme.colors.text};
+      }
 
       &:hover {
         border: .1rem solid ${({ theme }) => theme.colors.text};
-        border-right: none;
       }
       
     }
@@ -72,7 +75,6 @@ export const ContainerSearchInput = styled.div`
       border-radius: 0 .8rem .8rem 0;
       background-color: ${({ theme }) => theme.colors.secundary};
       border: .1rem solid ${({ theme }) => theme.colors.secundary};
-      border-left: none;
       color: ${({ theme }) => theme.colors.text};
       font-size: 2.4rem;
       height: 4.4rem;
@@ -80,7 +82,6 @@ export const ContainerSearchInput = styled.div`
 
       &:hover {
         border: .1rem solid ${({ theme }) => theme.colors.text};
-        border-left: none;
       }
     }
   }
@@ -167,9 +168,69 @@ export const ImgContainer = styled.div`
     &::before {
       content: '';
       position: absolute;
-      background-color: ${({theme}) => theme.colors.transparentBackground };
+      background-color: ${({ theme }) => theme.colors.transparentBackground};
       height: 100%;
       width: 100%;
+    }
+  }
+`
+
+export const SectionDownload = styled.section`
+  background-color: ${({theme}) => theme.colors.background };
+  font-family: 'Roboto',sans-serif;
+  font-style: italic;
+  color: ${({theme}) => theme.colors.text };
+  border-top: .1rem solid ${({theme}) => theme.colors.primary };
+  
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1.2rem;
+  padding: 3.6rem;
+  
+  button {
+    background-color: ${({theme}) => theme.colors.primary };
+    color: ${({theme}) => theme.colors.text };
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: 1.2rem;
+    border: .1rem solid ${({theme}) => theme.colors.text };
+    border-radius: .8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: .9;
+    
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+
+  .containerText {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    font-size: 2rem;
+    grid-row: 1/3;
+    border-right: .1rem solid  ${({theme}) => theme.colors.primary };
+  }
+  
+  @media (max-width: 694px) {
+    padding-top: 0;
+    grid-template-columns: 1fr 1fr;
+    
+    .containerText {
+      font-size: 1.6rem;
+      grid-column: 1/3;
+      border: none;
+    }
+
+    button {
+      justify-content: center;
     }
   }
 `
