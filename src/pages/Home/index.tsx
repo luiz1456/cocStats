@@ -48,14 +48,14 @@ export default function Home() {
           <div className="containerText">
             <p>Get ready for an epic journey of strategy and conquest! Join the battle and dominate the battlefield by downloading Clash of Clans right now!</p>
           </div>
-          <button>
+          <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans" target="_blank">
             <FaGooglePlay />
             <span>Download on Play Store</span>
-          </button>
-          <button>
+          </a>
+          <a href="https://apps.apple.com/us/app/clash-of-clans/id529479190" target="_blank">
             <FaApple />
             <span>Download from the Apple Store</span>
-          </button>
+          </a>
         </SectionDownload>
       </ ContainerLimitWidth>
     </Main >

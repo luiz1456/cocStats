@@ -188,7 +188,7 @@ export const SectionDownload = styled.section`
   grid-gap: 1.2rem;
   padding: 3.6rem;
   
-  button {
+  a {
     background-color: ${({theme}) => theme.colors.primary };
     color: ${({theme}) => theme.colors.text };
     display: flex;
@@ -200,6 +200,7 @@ export const SectionDownload = styled.section`
     font-size: 1rem;
     cursor: pointer;
     opacity: .9;
+    text-decoration: none;
     
     &:hover {
       opacity: 1;
@@ -229,7 +230,7 @@ export const SectionDownload = styled.section`
       border: none;
     }
 
-    button {
+    a {
       justify-content: center;
     }
   }
