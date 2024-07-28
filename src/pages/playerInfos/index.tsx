@@ -234,6 +234,7 @@ export default function PlayerInfos() {
           clanData = completeClanData(clanData)
           setClanData(clanData)
         }
+        console.log(playerData.troops)
         setPlayerData(playerData)
         setIsLoading(false)
       }
