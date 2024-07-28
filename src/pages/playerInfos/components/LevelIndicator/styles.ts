@@ -11,8 +11,8 @@ function getBgColor(variant: 'isMaximized' | 'notMaximized') {
 export const LevelIndicatorContainer = styled.div<{
   $variant: 'isMaximized' | 'notMaximized'
 }>`
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 0.4rem;
   display: flex;
   align-items: center;
@@ -20,8 +20,8 @@ export const LevelIndicatorContainer = styled.div<{
   box-shadow: 0 0 0.8rem ${({ $variant }) => getBgColor($variant)};
   background-color: ${({ $variant }) => getBgColor($variant)};
   position: absolute;
-  bottom: 0.8rem;
-  right: 0.8rem;
+  bottom: 0.4rem;
+  right: 0.4rem;
 
   span {
     color: #ffffff;
