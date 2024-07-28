@@ -1,56 +1,90 @@
-import { Link } from "react-router-dom"
-import { ButtonMenuMobile, ButtonTheme, Container, ContainerLimitWidth, ContainerLogo, ContainerNav } from "./styles"
-import { FaHome, FaSearch, FaFlag, FaHeart, FaMoon, FaSun } from "react-icons/fa"
-import { useState, useContext } from "react"
-import { ThemeContext } from "styled-components"
+import { NavLink } from 'react-router-dom'
+import {
+  ButtonMenuMobile,
+  ButtonTheme,
+  Container,
+  ContainerLimitWidth,
+  ContainerLogo,
+  ContainerNav,
+} from './styles'
+import {
+  FaHome,
+  FaSearch,
+  FaFlag,
+  FaHeart,
+  FaMoon,
+  FaSun,
+} from 'react-icons/fa'
+import { useState, useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import logo from './assets/COC_LOGO.png'
 
-export default function Header({ toggleTheme }: {toggleTheme: () => void}) {
-  const [isActive, setIsActive] = useState('Home')
+export default function Header({ toggleTheme }: { toggleTheme: () => void }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const theme = useContext(ThemeContext)
-
-  const handleNav = (active: string) => {
-    setIsActive(active)
-    setMenuOpen(false)
-  }
 
   return (
     <Container>
       <ContainerLimitWidth>
         <ContainerLogo>
-          <Link to={'/'}><img className="logo" src="assets/imgs/others/COC_LOGO.png" alt="" /></Link>
+          <NavLink to={'/'}>
+            <img className="logo" src={logo} alt="" />
+          </NavLink>
         </ContainerLogo>
         <div className="containerButtons">
           <ContainerNav className={menuOpen ? '' : 'hiden'}>
             <ul>
-              <li><Link
-                onClick={() => handleNav('Home')}
-                className= {`linkNav ${isActive === 'Home' && 'active'}`}
-                to={'/'}>
-                <FaHome />Home</Link></li>
-              <li><Link
-                onClick={() => handleNav('Search')}
-                className= {`linkNav ${isActive === 'Search' && 'active'}`}
-                to={'search'}>
-                <FaSearch />Search</Link></li>
-              <li><Link
-                onClick={() => handleNav('Classifications')}
-                className= {`linkNav ${isActive === 'Classifications' && 'active'}`}
-                to={'/'}>
-                <FaFlag />Classifications</Link></li>
-              <li><Link
-                onClick={() => handleNav('Favorite')}
-                className= {`linkNav ${isActive === 'Favorite' && 'active'}`}
-                to={'/'}>
-                <FaHeart />Favorite</Link></li>
+              <li>
+                <NavLink
+                  className="linkNav"
+                  to={'/'}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <FaHome />
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="linkNav"
+                  to={'search'}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <FaSearch />
+                  Procurar
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="linkNav"
+                  to={'/xx'}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <FaFlag />
+                  Classificações
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="linkNav"
+                  to={'/csd'}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <FaHeart />
+                  Favoritos
+                </NavLink>
+              </li>
             </ul>
           </ContainerNav>
-          <ButtonTheme onClick={toggleTheme}> {theme!.title === 'light' ? <FaSun /> : <FaMoon />} </ButtonTheme>
+          <ButtonTheme onClick={toggleTheme}>
+            {' '}
+            {theme!.title === 'light' ? <FaSun /> : <FaMoon />}{' '}
+          </ButtonTheme>
           <ButtonMenuMobile onClick={() => setMenuOpen(!menuOpen)}>
             <div className={menuOpen ? 'open' : ''}>
-              <div className="div1"/>
-              <div className="div2"/>
-              <div className="div3"/>
+              <div className="div1" />
+              <div className="div2" />
+              <div className="div3" />
             </div>
           </ButtonMenuMobile>
         </div>

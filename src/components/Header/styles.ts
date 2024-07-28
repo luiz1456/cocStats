@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { LimitWidth } from "../LimitWidth";
+import styled from 'styled-components'
+import { LimitWidth } from '../LimitWidth'
 
 export const Container = styled.header`
   height: 8rem;
@@ -8,23 +8,24 @@ export const Container = styled.header`
   font-family: 'Roboto', sans-serif;
   background-color: ${({ theme }) => theme.colors.primary};
   position: fixed;
+  top: 0;
   z-index: 5;
 
   .containerButtons {
     display: flex;
     align-items: center;
     gap: 3.6rem;
-}
+  }
 
   @media (max-width: 694px) {
     .containerButtons {
       gap: 1.6rem;
 
-    .hiden {
-      transform: translateX(100%);
+      .hiden {
+        transform: translateX(100%);
+      }
     }
-    }
-  } 
+  }
 `
 
 export const ContainerLogo = styled.div`
@@ -49,27 +50,26 @@ export const ContainerNav = styled.nav`
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: .4rem;
+      gap: 0.4rem;
       position: relative;
-      
+
       &::after {
         content: '';
         width: 100%;
-        height: .3rem;
-        border-radius: .4rem;
-        background-color: ${({theme}) => theme.colors.text };
+        height: 0.3rem;
+        border-radius: 0.4rem;
+        background-color: ${({ theme }) => theme.colors.text};
         position: absolute;
         bottom: -0.4rem;
         transform: scaleX(0);
         transition: transform 100ms ease-in-out;
         transform-origin: 50%;
       }
-      
+
       &:hover::after {
         transform: scalex(100%);
         transform-origin: 50%;
       }
-      
     }
     .active {
       &::after {
@@ -93,13 +93,13 @@ export const ContainerNav = styled.nav`
 
     ul {
       flex-direction: column;
-      
+
       li {
-        padding: .8rem;
+        padding: 0.8rem;
       }
     }
   }
-  `
+`
 
 export const ContainerLimitWidth = styled(LimitWidth)`
   display: flex;
@@ -116,27 +116,27 @@ export const ButtonTheme = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: .4rem;
-  border: .1rem solid ${({ theme }) => theme.colors.primary};
+  padding: 0.4rem;
+  border: 0.1rem solid ${({ theme }) => theme.colors.primary};
   border-radius: 50%;
 
   &:hover {
-    border: .1rem solid ${({ theme }) => theme.colors.text};
+    border: 0.1rem solid ${({ theme }) => theme.colors.text};
   }
 `
 export const ButtonMenuMobile = styled.button`
   cursor: pointer;
   display: none;
-  padding: .4rem;
-  border-radius: .4rem;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
   background-color: ${({ theme }) => theme.colors.primary};
-  border: .1rem solid ${({ theme }) => theme.colors.primary};
+  border: 0.1rem solid ${({ theme }) => theme.colors.primary};
   height: 100%;
-  
+
   &:hover {
-    border: .1rem solid ${({ theme }) => theme.colors.text};
+    border: 0.1rem solid ${({ theme }) => theme.colors.text};
   }
-  &>div {
+  & > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -147,27 +147,26 @@ export const ButtonMenuMobile = styled.button`
       transform-origin: 0%;
       transition: transform 600ms ease-out;
     }
-    
+
     .div2 {
       transition: 600ms ease-out;
     }
-    
+
     .div3 {
       transform-origin: 0% 100%;
       transition: transform 600ms ease-out;
-
     }
 
     div {
       width: 2.4rem;
-      height: .4rem;
-      border-radius: .8rem;
+      height: 0.4rem;
+      border-radius: 0.8rem;
       background-color: ${({ theme }) => theme.colors.text};
       opacity: 1;
     }
   }
 
-  .open {    
+  .open {
     transform: translateX(20%);
 
     .div1 {
@@ -175,21 +174,20 @@ export const ButtonMenuMobile = styled.button`
       transform: rotate(45deg);
       transition: transform 600ms ease-out;
     }
-    
+
     .div2 {
       opacity: 0;
       transition: 600ms ease-out;
     }
-    
+
     .div3 {
       transform-origin: 0% 100%;
       transition: transform 600ms ease-out;
       transform: rotate(-45deg);
-
     }
   }
-  
+
   @media (max-width: 694px) {
-      display: flex;
+    display: flex;
   }
-  `
+`
