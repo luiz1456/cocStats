@@ -2,12 +2,12 @@
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home/index.tsx'
 import Search from './pages/Search/index.tsx'
 import PlayerInfos from './pages/playerInfos/index.tsx'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <App />,
